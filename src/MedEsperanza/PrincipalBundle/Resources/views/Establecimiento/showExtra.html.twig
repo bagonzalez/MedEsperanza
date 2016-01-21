@@ -1,0 +1,131 @@
+<HTML>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <title>{% block titulo %}Medicentro La Esperanza{% endblock %}</title>
+
+{% block stylesheets %}
+        <link href="{{ asset('/css/style.css') }}" type="text/css" rel="stylesheet" />      
+ {% endblock %}
+        
+     </head>
+
+     <body style="overflow: auto;">  
+     <center>
+     
+{% block javascripts %} 
+    <script src="{{ asset('/js/jquery-1.7.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/jquery.dropotron-1.0.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/jquery.poptrox-1.0.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/jquery.slidertron-1.0.js') }}" type="text/javascript"></script>
+ {% endblock %} 
+    
+    <div id="header-wrapper">
+        <div id="header">
+            
+            
+                <img src="{{ asset('/images/logomedicentro2.png')}}" alt="" width="970" height="300"  />          
+               <!-- <h1>
+                    <a href="#">Medicentro La Esperanza</a>                     
+                </h1>
+                <p>25 Ave. Norte, una cuadra al Sur del Hospital Bloom.<br/>
+                Tel: 2131-1964</p>    
+               -->
+            
+                
+        </div>
+    </div>
+    
+    
+
+    <div id="wrapper">
+        <div id="page">
+            <div id="headerMenu">    
+    
+                <div class="menu">
+                    <ul>
+                        <li id="active"><a href="{{ path('MedEsperanzaPrincipalBundle_homepage') }}">INICIO</a></li>                        
+                        <li><a href="{{ path('MedEsperanzaPrincipalBundle_homeindexCategoria') }}">DIRECTORIO</a></li>
+                        <li><a href="{{ path('MedEsperanzaPrincipalBundle_ubicacionMedEspec') }}">UBICACION</a></li>
+                        <li><a href="{{ path('MedEsperanzaPrincipalBundle_ubicacionMedEspec') }}">CONTACTENOS</a></li>
+                    </ul>		
+                </div>
+            </div>
+            <div id="content">
+                <div class="contentbg">                    
+                     {% block body %} 
+                        <h1>{{ entity.nombre }}</h1>
+                                <div class="slide"> <img  src="data:image/png;base64,{{ entity.banner }}" width="400" height="250" alt=""/></div>                                                                
+                                <br>
+                                <br>
+                                
+                              <div>
+                                <div><b>                    
+                                        {% if  entity.paginaespecial == 'T' %}
+                                                <h4><a href="{{ path('establecimiento_showExtra', { 'id': entity.id }) }}">{{ entity.nombre }}</a></h4></b>
+                                        {% else %}
+                                                <h4><a href="#">{{ entity.nombre }}</a></h4></b>
+                                        {% endif %}  
+
+                                        <div align="right"><h5><b>Local:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entity.ubicacion }}</b></h5></div>
+                                 </div>
+                                <br/>
+                                <div>
+                                    <div><FONT FACE="arial" SIZE=4 >{{ entity.descripcioncorta }}</FONT>   
+                                    <FONT FACE="arial" SIZE=4 >{{ entity.descripcionlarga }}</FONT>  
+                                    </div>
+                                    <div>
+                                        <div align="left">
+                                            <address>                           
+                                                <font FACE="arial" SIZE=3 >
+                                                
+                                                 {% if  entity.responsable != null%}
+                                                <br/><b>Responsable:</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entity.responsable }}
+                                                {% endif %}  
+                                   
+                                                {% if  entity.email != null%}
+                                                <br/><b>Email:</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entity.email }}
+                                                {% endif %}                        
+
+
+                                                {% if  entity.telefonofijo != null%}
+                                                <br/><b>Telefono:</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+503) {{ entity.telefonofijo }}
+                                                {% endif %}                        
+
+                                                {% if  entity.telefonomovil != null%}
+                                                <br/><b>M&oacute;vil:</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+503) {{ entity.telefonomovil }}
+                                                {% endif %}                        
+                                                    <br/>
+                                                    <b>Horario:</b><ul>{{ entity.getHorarioatencion|striptags('<br/>')|raw }} </ul>                        
+                                                </font>    
+                                            </address>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <br>
+                                <br>
+                                <br>
+                                
+                     {% endblock %} 
+                </div>
+            </div>
+            <div id="sidebar-bg">
+                <div id="sidebar">
+                      {% include 'MedEsperanzaPrincipalBundle:Default:categoriasMenu.html.twig'%}
+                </div>
+            </div>            
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+    </div>
+    <div id="footer">        
+        <p>25 Ave. Norte, una cuadra al Sur del Hospital Bloom.<br/>
+        Tel: (503) 2131-1964 email: medicentrolaesperanza@hotmail.es <br/>
+        2012 Medicentro La Esperanza
+        </p>
+        
+    </div>
+    </center>
+    </body>
+</HTML>
+
+

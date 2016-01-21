@@ -1,0 +1,127 @@
+{% extends 'MedEsperanzaPrincipalBundle:Default:indexOri.html.twig' %}
+{% block body %}
+
+    <div class="post">
+        <div class="entry">
+            <div>
+                <div>
+                    <h3 >
+                        {{ entityCategoria.nombre }}
+                    </h3>
+                </div>
+                <div>
+                    <p>{{ entityCategoria.descripcion }}</p>
+                    {% if  entityCategoria.fotobanner != null %} 
+                    <div id="wrapper"  >   
+                        <div class="slider-wrapper theme-default" style="width:400px; height:200px; ">
+                            <div id="slider" class="nivoSlider" style="width:400px; height:200px; ">
+                                {% if  entityCategoria.fotobanner != null %}                                
+                                       <a href="data:image/jpg;base64,{{ entityCategoria.fotobanner }}"><img src="data:image/jpg;base64,{{ entityCategoria.fotobanner }}" data-thumb="data:image/png;base64,{{ entityCategoria.fotobanner }}"  alt=""/></a>                                                                                                        
+                                {% endif %}  
+                                {% if  entityCategoria.fotobanner2 != null %}                                
+                                       <a href="data:image/jpg;base64,{{ entityCategoria.fotobanner2 }}"><img src="data:image/jpg;base64,{{ entityCategoria.fotobanner2 }}" data-thumb="data:image/png;base64,{{ entityCategoria.fotobanner2 }}"  alt=""/></a>                                                                                                        
+                                {% endif %}  
+                                {% if  entityCategoria.fotobanner3 != null %}                                
+                                       <a href="data:image/jpg;base64,{{ entityCategoria.fotobanner3 }}"><img src="data:image/jpg;base64,{{ entityCategoria.fotobanner3 }}" data-thumb="data:image/png;base64,{{ entityCategoria.fotobanner3 }}"  alt=""/></a>                                                                                                        
+                                {% endif %}  
+                                {% if  entityCategoria.fotobanner4 != null %}                                
+                                       <a href="data:image/jpg;base64,{{ entityCategoria.fotobanner4 }}"><img src="data:image/jpg;base64,{{ entityCategoria.fotobanner4 }}" data-thumb="data:image/png;base64,{{ entityCategoria.fotobanner4 }}"  alt=""/></a>                                                                                                        
+                                {% endif %}  
+                            </div>                        
+                        </div>
+                    </div>
+                    {% endif %} 
+                    
+                </div>
+            
+            </div>
+        
+        
+                 <script type="text/javascript">
+                    $(window).load(function() {
+                        $('#slider').nivoSlider();
+                    });
+                 </script>
+            </div>
+    </div>
+ {%   if entitiesEstablecimientos|length > 0 %}
+       
+        {% for entity in entitiesEstablecimientos %}
+       <div class="post">
+           <div class="entry">
+               <div>
+                   <div><b>                    
+                           {% if  entity.paginaespecial == 'T' %}
+                                   <h4><a href="{{ path('establecimiento_showExtra', { 'id': entity.id }) }}">{% filter upper %}{{ entity.nombre }}{% endfilter %}</a></h4></b>
+                           {% else %}
+                                   <h4><a href="#">{% filter upper %}{{ entity.nombre }}{% endfilter %}</a></h4></b>
+                           {% endif %}  
+
+                           <div align="right"><h5><b>Local:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entity.ubicacion }}</b></h5></div>
+                    </div>
+                   <br/>
+                   <div>
+                       <div><FONT FACE="arial" SIZE=4 >{{ entity.descripcioncorta }}</FONT>                   
+                       </div>
+                       <div>
+                           <div>
+                               <address>                           
+                                   <font FACE="arial" SIZE=3 >
+                                   {% if  entity.responsable != null%}
+                                   <br/><b>Responsable:</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entity.responsable }}
+                                   {% endif %}  
+                                   
+                                   {% if  entity.email != null%}
+                                   <br/><b>Email:</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entity.email }}
+                                   {% endif %}                        
+
+
+                                   {% if  entity.telefonofijo != null%}
+                                   <br/><b>Tel&eacute;fono:</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+503) {{ entity.telefonofijo }}
+                                   {% endif %}                        
+
+                                   {% if  entity.telefonomovil != null%}
+                                   <br/><b>M&oacute;vil:</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+503) {{ entity.telefonomovil }}
+                                   {% endif %}                        
+                                       <br/>
+                                       <b>Horario:</b><ul>{{ entity.getHorarioatencion|striptags('<br/>')|raw }} </ul>                        
+                                   </font>    
+                               </address>
+                            </div>
+                       </div>
+                   </div>
+               </div>
+
+                    <!--<td  >
+                       <ul>
+                           <li>
+                               <a href="{{ path('establecimiento_show', { 'id': entity.id }) }}">show</a>
+                           </li>
+                           <li>
+                               <a href="{{ path('establecimiento_edit', { 'id': entity.id }) }}">edit</a>
+                           </li>
+                       </ul>
+                   </td>-->
+
+
+
+           </div>
+       </div>
+        {% endfor %}
+    {% else %}    
+        <FONT FACE="arial" SIZE=4 >Para mayor informaci&oacute;n, favor preguntar sobre este servicio en: <br>
+            Tel: (503) 2131-1964 <br>
+            email: medicentrolaesperanza@hotmail.es 
+        </FONT>
+        <br>
+        <br>
+        <br>
+
+    {% endif %}
+
+
+{% endblock %}
+    
+
+    
+

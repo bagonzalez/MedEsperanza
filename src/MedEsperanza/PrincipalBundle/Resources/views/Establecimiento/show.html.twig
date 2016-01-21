@@ -1,0 +1,77 @@
+<h1>Establecimiento</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Nombre</th>
+            <td>{{ entity.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Ubicacion</th>
+            <td>{{ entity.ubicacion }}</td>
+        </tr>
+        <tr>
+            <th>Descripcioncorta</th>
+            <td>{{ entity.descripcioncorta }}</td>
+        </tr>
+        <tr>
+            <th>Descripcionlarga</th>
+            <td>{{ entity.descripcionlarga }}</td>
+        </tr>
+         <tr>
+            <th>Responsable</th>
+            <td>{{ entity.responsable }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ entity.email }}</td>
+        </tr>
+        <tr>
+            <th>Telefonofijo</th>
+            <td>{{ entity.telefonofijo }}</td>
+        </tr>
+        <tr>
+            <th>Telefonomovil</th>
+            <td>{{ entity.telefonomovil }}</td>
+        </tr>
+        <tr>
+            <th>Banner</th>
+            <td>{{ entity.banner }}</td>
+        </tr>
+        <tr>
+            <th>Fotografia</th>
+            <td>{{ entity.fotografia }}</td>
+        </tr>
+        <tr>
+            <th>Paginaespecial</th>
+            <td>{{ entity.paginaespecial }}</td>
+        </tr>
+        <tr>
+            <th>Horarioatencion</th>
+            <td>{{ entity.horarioatencion }}</td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('establecimiento') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('establecimiento_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('establecimiento_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

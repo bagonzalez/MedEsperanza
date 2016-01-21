@@ -1,0 +1,19 @@
+MedEsperanzaPrincipalBundle_homepage:
+    pattern:  /home/
+    defaults: { _controller: MedEsperanzaPrincipalBundle:Default:index }
+    
+MedEsperanzaPrincipalBundle_homeindexCategoria:
+    pattern:  /home/indexCategoria
+    defaults: { _controller: MedEsperanzaPrincipalBundle:Default:indexCategoria }
+    
+MedEsperanzaPrincipalBundle_ubicacionMedEspec:
+    pattern:  /home/ubicacion
+    defaults: { _controller: MedEsperanzaPrincipalBundle:Default:ubicacionMedEspec }
+    
+MedEsperanzaPrincipalBundle_especialidad:
+        resource: "@MedEsperanzaPrincipalBundle/Resources/config/routing/especialidad.yml"
+        prefix:   /especialidad
+
+MedEsperanzaPrincipalBundle_establecimiento:
+        resource: "@MedEsperanzaPrincipalBundle/Resources/config/routing/establecimiento.yml"
+        prefix:   /establecimiento

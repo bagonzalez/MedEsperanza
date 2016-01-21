@@ -1,0 +1,194 @@
+<HTML>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <title>{% block titulo %}Medicentro La Esperanza{% endblock %}</title>
+        <meta name="description" content="Medicentro La Esperanza" />
+        <meta name="keywords" content="médicos, el salvador, odontología, cirugía, ortopedia, pediatras, Abogados
+Alergología y Dermatología, Calzado / Aparatos Ortopedicos, Cardiología, Cirugía, Coloproctología, Depositos Dentales, Endocrinología, Farmacia, Fisioterapia, Gastroenterología, Ginecología, Laboratorios, Medicina, Neumología, Neurología, Nutrición, Odontología Oftalmología y Opticas, Oncología, Ortopedia, Otorrinolaringología, Patología, Pediatría, Psicología,Psiquiatría,Radiología,Reumatología,Urología, Varios" />
+
+{% block stylesheets %}        
+        <link href="{{ asset('/css/styles.css') }}" type="text/css" rel="stylesheet" /> 
+        
+        <link rel="stylesheet" href="{{ asset('/css/themes/default/default.css')}}" type="text/css" media="screen" />      
+        <link rel="stylesheet" href="{{ asset('/css/nivo-slider.css')}}" type="text/css" media="screen" />
+     
+        
+ {% endblock %}
+    
+          
+        
+     </head>
+
+     <body>
+     <center>
+         
+       <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+{% block javascripts %} 
+    <script src="{{ asset('/js/jquery-1.7.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/jquery.dropotron-1.0.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/jquery.poptrox-1.0.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/jquery.slidertron-1.0.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/jquery.nivo.slider.js') }}" type="text/javascript"></script>    
+ {% endblock %} 
+    
+              
+            <div id="container">
+                <!-- begin #header -->
+            <div id="header">
+                <div class="logoContainer">
+                    <div><!--<img src="images/logo.png" alt="" />--></div>
+                    <div class="slogan"></div>
+                </div>
+                <div class="icons">
+                    <ul>
+                        <!--<li><a href=""><img src="{{ asset('/images/twitter.png')}}" alt="" /></a></li>-->
+                        <!--<li><a href=""><img src="{{ asset('/images/delicious.png')}}" alt="" /></a></li>-->
+                        <li><a href="https://www.facebook.com/MedicentroLaEsperanza" target="_blank"><img src="{{ asset('/images/facebook.png')}}" alt="" /></a></li>                        
+                        <!--<li><a href=""><img src="{{ asset('/images/feed.png')}}" alt="" /></a></li>
+                        <li><a href=""><img src="{{ asset('/images/flickr.png')}}" alt="" /></a></li>
+                        <li><a href=""><img src="{{ asset('/images/linkedin.png')}}" alt="" /></a></li>
+                        <li><a href=""><img src="{{ asset('/images/myspace.png')}}" alt="" /></a></li>
+                        <li><a href=""><img src="{{ asset('/images/stumble.png')}}" alt="" /></a></li>-->
+                    </ul>
+                </div>
+                <div class="clearfloat"></div>
+                <div class="menu">
+                    <ul>
+                        <li id="active"><a href="{{ path('MedEsperanzaPrincipalBundle_homepage') }}">INICIO</a></li>                        
+                        <li><a href="{{ path('MedEsperanzaPrincipalBundle_homeindexCategoria') }}">DIRECTORIO</a></li>
+                        <li><a href="{{ path('MedEsperanzaPrincipalBundle_ubicacionMedEspec') }}">UBICACION</a></li>
+                        <li><a href="{{ path('MedEsperanzaPrincipalBundle_ubicacionMedEspec') }}">CONTACTENOS</a></li>
+                    </ul>	
+                </div>
+                
+                <div id="wrapper">        
+
+                    <div class="slider-wrapper theme-default">
+                        <div id="slider" class="nivoSlider" style="width:970; height:310;">
+                            <img src="{{ asset('/images/logomedicentro2.png')}}" data-thumb="{{ asset('/images/logomedicentro2.png')}}" width="970" height="310"  alt=""  title="#htmlcaption5"/>
+                            <img src="{{ asset('/images/foto7modLOGO.jpg') }}" data-thumb="{{ asset('/images/foto7modLOGO.jpg') }}" width="970" height="310"  alt="" title="#htmlcaption3" />
+                            <img src="{{ asset('/images/imagenMedEspe.jpg') }}" data-thumb="{{ asset('/images/imagenMedEspe.jpg') }}" width="970" height="310"  alt="" data-transition="slideInLeft"  title="#htmlcaption4"/>
+                            <img src="{{ asset('/images/imagenMedEspe2.jpg') }}" data-thumb="{{ asset('/images/imagenMedEspe2.jpg') }}" width="970" height="310"  alt="" title="#htmlcaption" />
+                            <img src="{{ asset('/images/imagenMedEspe3.jpg') }}" data-thumb="{{ asset('/images/imagenMedEspe3.jpg') }}" width="970" height="310"  alt="" title="#htmlcaption2" />
+                            
+                        </div>
+                        <div id="htmlcaption5" class="nivo-html-caption">
+                            <strong>Profesionales</strong> con amplia experiencia en sus &aacute;mbitos laborales.
+                        </div>
+                        <div id="htmlcaption" class="nivo-html-caption">
+                            <strong>Amplios</strong> parqueos para su comodidad.
+                        </div>
+                        <div id="htmlcaption2" class="nivo-html-caption">
+                            <strong>Un lugar</strong> amplio y limpio.
+                        </div>
+                        <div id="htmlcaption3" class="nivo-html-caption">
+                            <strong>Ambiente</strong> agradable y fresco.
+                        </div>
+                        <div id="htmlcaption4" class="nivo-html-caption">
+                            <strong>Locales</strong> con f&aacute;cil acceso, equipados con rampas, gradas, y pasamanos.
+                        </div>
+                    </div>
+
+                </div>
+                
+                 <script type="text/javascript">
+                    $(window).load(function() {
+                        $('#slider').nivoSlider();
+                    });
+                 </script>
+                
+        
+            </div>
+            <!-- end #header -->
+            <div class="boxes">
+                <div class="box">
+                    <a href="{{ path('MedEsperanzaPrincipalBundle_homeindexCategoria') }}">   <h3>SERVICIOS</h3>
+                   <img src="{{ asset('/images/medicos2.jpg')}}" alt=""  width="273" height="182" /></a>
+                    <p>
+                        <br>
+                        Amplios parqueos, arrendamiento de locales, seguridad.<br> <br>                        
+                        <br><br><br>
+                    </p>
+                    <div class="boxButton"><input type="button" value="DETALLE..." class="buttonStyle" /></div>
+                </div>
+                <div class="box">
+                        <h3>ALQUILERES</h3>
+                    <img src="{{ asset('/images/imagenMedEspePeque.jpg')}}" alt=""  width="273" height="182" />
+                    <p>
+                        <br><b>INFORMACI&Oacute;N</b> sobre precios y locales disponibles.<br><br><br><br><br>
+                    </p>
+                    <div class="boxButton"><input type="button" value="DETALLE..." class="buttonStyle" /></div>
+                </div>
+                <div class="box">
+                       <a href="{{ path('MedEsperanzaPrincipalBundle_homeindexCategoria') }}"> <h3>DIRECTORIO</h3>
+                    <img src="{{ asset('/images/directorios-web.jpg')}}" alt="" width="273" height="182"  /></a>
+                    <p>
+                        <br><b>DIRECTORIO DE PROFESIONALES </b> por especialidades.<br><br><br><br><br>
+                    </p>
+                    <a href="{{ path('MedEsperanzaPrincipalBundle_homeindexCategoria') }}"><div class="boxButton"><input type="button" value="DETALLE..." class="buttonStyle" /></div></a>
+                </div>
+            </div>
+            <div class="clearfloat"></div>
+            <div class="aboutUs" align="left">
+                <h2><center>Sobre Nosotros</center></h2>
+                <br>
+<h4><center>¿Qui&eacute;nes somos?</center></h4>
+<br>
+<center>
+<p>Somos un equipo de profesionales de la medicina, otras ramas relacionadas, as&iacute; como algunos
+profesionales en diferentes servicios generales.</p></center>
+
+<br>
+<h4><center>Nuestra Visi&oacute;n</center></h4>
+<br>
+<center>
+Ser referentes en las diferentes &aacute;reas o especialidades que atendemos buscando la preferencia de
+nuestros pacientes y/o clientes.</center>
+
+<br>
+<h4><center>Nuestra Misi&oacute;n</center></h4>
+<br>
+<center>
+<p>Proveer servicios personalizados en las diferentes &aacute;reas y especialidades que atendemos, <br>
+procurando sanar la confianza y relaciones de largo plazo con nuestros pacientes y/o clientes.</p></center>
+<br>
+
+<h4><center>¿Qu&eacute; puedo encontrar en Condominio Medicentro La Esperanza?</center></h4>
+<br>
+
+<p><center>Diferentes servicios m&eacute;dicos y otras ramas (ver directorio)</center>
+
+</p><br>
+                   
+       
+               
+                 <br><center>
+                <div class="fb-like" data-href="https://www.facebook.com/MedicentroLaEsperanza" data-send="false" data-width="450" data-show-faces="true"></div></center><br>                 
+               
+                <div class="clearfloat"></div>
+            </div>
+            <div class="clearfloat"></div>
+            
+            <!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats --><br class="clearfloat" />
+            <!-- begin #footer -->
+            <div id="footer">
+                        <p>
+                            25 Ave. Norte, una cuadra al Sur del Hospital Bloom.<br/>
+                            Tel: (503) 2131-1964 email: medicentrolaesperanza@hotmail.es <br/>
+                            Copyright (c)2012 Medicentro La Esperanza                        
+                
+             </div>
+            <!-- end #footer -->
+        </div>
+        <!-- end #container -->
+</center>
+    </body>
+</HTML>

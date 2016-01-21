@@ -1,0 +1,73 @@
+<h1>Establecimiento list</h1>
+
+    <!--<thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Ubicacion</th>
+            <th>Descripcioncorta</th>
+            <th>Descripcionlarga</th>
+            <th>Email</th>
+            <th>Telefonofijo</th>
+            <th>Telefonomovil</th>
+            <th>Banner</th>
+            <th>Fotografia</th>
+            <th>Paginaespecial</th>
+            <th>Horarioatencion</th>
+            <th>Id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>-->
+    
+    {% for entity in entities %}
+    <table class="records_list"   width=70% height=100 >
+       <!-- <tbody>-->
+        <tr>
+            <td colspan="12"  ><b><a href="{{ path('establecimiento_show', { 'id': entity.id }) }}">{{ entity.nombre }}</a></b></td>            
+        </tr>
+        <tr >
+            <td rowspan="4" width=10%   ><b>Ubicaci&oacute;n: </b><br>{{ entity.ubicacion }}</td>           
+        </tr>
+        <tr>
+            <td colspan="6"><i>{{ entity.descripcioncorta }}</i><br><br>
+                <b>Email:</b> {{ entity.email }} <br>                
+        
+            </td>
+        <tr>
+            <td width=50% >
+                <b>Telefono:</b> {{ entity.telefonofijo }} <br>                
+            </td>
+            <td width=50% ><b>Celular:</b> {{ entity.telefonomovil }}<br></td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <b>Horario:</b><ul> {{ entity.getHorarioatencion|striptags('<br/>')|raw }} </ul>
+            </td>
+                            
+            <!--<td  >
+                <ul>
+                    <li>
+                        <a href="{{ path('establecimiento_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('establecimiento_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>-->
+        </tr>
+           
+        <!--</tbody>-->
+    </table> <br>
+    {% endfor %}
+    
+
+<ul>
+    <li>
+        <!--<a href="{{ path('establecimiento_new') }}">
+            Create a new entry
+        </a>-->
+        
+    </li>
+    <li>
+        <h1><a href="{{ path('especialidad') }}">Regresar</a></h1>    
+    </li>
+</ul>

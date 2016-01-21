@@ -1,0 +1,10 @@
+{% block menuCategoria %}
+    <h3>DIRECTORIO</h3>
+    {% for entity in entities %}
+        <ul>    
+            <li>
+                <a href="{{ path('establecimiento_especialidad', { 'id': entity.id }) }}">{{ entity.nombre }}</a>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

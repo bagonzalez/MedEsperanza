@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="MedEsperanza\PrincipalBundle\Entity\Establecimiento" table="Establecimiento">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="idEstablecimiento">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="255"/>
+    <field name="ubicacion" type="string" column="ubicacion" length="255"/>
+    <field name="descripcioncorta" type="text" column="descripcioncorta"/>
+    <field name="descripcionlarga" type="text" column="descripcionlarga" nullable="true"/>
+    <field name="responsable" type="text" column="responsable" nullable="true"/>
+    <field name="email" type="string" column="email" length="255"  nullable="true"   />
+    <field name="telefonofijo" type="string" column="telefonofijo" length="255"/>
+    <field name="telefonomovil" type="string" column="telefonomovil" length="255" nullable="true"/>
+    <field name="banner" type="blob" column="banner"/>
+    <field name="fotografia" type="blob" column="fotografia"/>
+    <field name="paginaespecial" type="string" column="paginaespecial" length="1"/>
+    <field name="horarioatencion" type="text" column="horarioAtencion"/>
+    <many-to-one field="idespecialidad" target-entity="Especialidad" inversed-by="establecimientos" orphan-removal="">
+      <join-columns>
+        <join-column name="idEspecialidad" referenced-column-name="idEspecialidad"/>
+      </join-columns>
+    </many-to-one>
+   
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

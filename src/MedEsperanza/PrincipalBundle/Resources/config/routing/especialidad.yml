@@ -1,0 +1,30 @@
+especialidad:
+    pattern:  /
+    defaults: { _controller: "MedEsperanzaPrincipalBundle:Especialidad:index" }
+
+#especialidad_show:
+#    pattern:  /{id}/show
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Especialidad:show" }
+
+#especialidad_new:
+#    pattern:  /new
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Especialidad:new" }
+
+#especialidad_create:
+#    pattern:  /create
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Especialidad:create" }
+#    requirements: { _method: post }
+
+#especialidad_edit:
+#    pattern:  /{id}/edit
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Especialidad:edit" }
+
+#especialidad_update:
+#    pattern:  /{id}/update
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Especialidad:update" }
+#    requirements: { _method: post }
+
+#especialidad_delete:
+#    pattern:  /{id}/delete
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Especialidad:delete" }
+#    requirements: { _method: post }

@@ -1,0 +1,38 @@
+establecimiento:
+    pattern:  /
+    defaults: { _controller: "MedEsperanzaPrincipalBundle:Establecimiento:index" }
+
+establecimiento_especialidad:
+    pattern:  /{id}/indexEspecialidad
+    defaults: { _controller: "MedEsperanzaPrincipalBundle:Establecimiento:indexEspecialidad" }   
+
+establecimiento_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MedEsperanzaPrincipalBundle:Establecimiento:show" }
+
+#establecimiento_new:
+#    pattern:  /new
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Establecimiento:new" }
+
+#establecimiento_create:
+#    pattern:  /create
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Establecimiento:create" }
+#    requirements: { _method: post }
+
+establecimiento_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MedEsperanzaPrincipalBundle:Establecimiento:edit" }
+
+#establecimiento_update:
+#    pattern:  /{id}/update
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Establecimiento:update" }
+#    requirements: { _method: post }
+
+#establecimiento_delete:
+#    pattern:  /{id}/delete
+#    defaults: { _controller: "MedEsperanzaPrincipalBundle:Establecimiento:delete" }
+#    requirements: { _method: post }
+   
+establecimiento_showExtra:
+    pattern:  /{id}/showExtra
+    defaults: { _controller: "MedEsperanzaPrincipalBundle:Establecimiento:showExtra" }
